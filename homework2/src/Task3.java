@@ -1,4 +1,4 @@
-public class TaskThree {
+public class Task3 {
     public static void main(String[] args) {
         int number = 123;
         // Число не было предопределено, примем значение '123'
