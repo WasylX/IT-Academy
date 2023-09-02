@@ -17,7 +17,7 @@ public class Task6 {
 
         System.out.println("Среднее арифметическое: " + average);
 
-        double averageDouble = (double) sum / 10;
+        double averageDouble = sum / 10.0;
         System.out.println("Среднее арифметическое (double): " + averageDouble);
 
         double discardedValue = averageDouble - average;
