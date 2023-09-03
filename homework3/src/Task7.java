@@ -46,7 +46,7 @@ public class Task7 {
         } else if (e < minNum) {
             minNum = e;
             minVar = "e";
-        }else {
+        } else {
             System.out.println("Максимальное число " + maxVar + " со значением " + maxNum);
             System.out.println("Минимальное число " + minVar + " со значением  " + minNum);
         }
