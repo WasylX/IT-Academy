@@ -1,15 +1,20 @@
 public class Task7 {
     public static void main(String[] args) {
         int a = 5;
-        int b = 3;
+        int b = 2;
         int c = 7;
-        int d = 2;
-        int e = 7;
+        int d = 6;
+        int e = 4;
 
         int maxNum = a;
         int minNum = a;
         String maxVar = "a";
         String minVar = "a";
+
+        if (a == b && b == c && c == d && d == e) {
+            System.out.println("Все числа равны между собой: " + a);
+            return;
+        }
 
         if (b > maxNum) {
             maxNum = b;
@@ -41,13 +46,9 @@ public class Task7 {
         } else if (e < minNum) {
             minNum = e;
             minVar = "e";
-        }
-
-        if (a == b && b == c && c == d && d == e) {
-            System.out.println("Все числа равны между собой: " + a);
-        } else {
-            System.out.println("Максимальное число: " + maxVar + " со значением " + maxNum);
-            System.out.println("Минимальное число: " + minVar + " со значением " + minNum);
+        }else {
+            System.out.println("Максимальное число " + maxVar + " со значением " + maxNum);
+            System.out.println("Минимальное число " + minVar + " со значением  " + minNum);
         }
     }
 }

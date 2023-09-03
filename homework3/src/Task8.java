@@ -2,7 +2,7 @@ public class Task8 {
     public static void main(String[] args) {
         //Исходные данные
         displayDateByDayOfYear(360);
-        displayDateByMonthAndDay(13, 28);
+        displayDateByMonthAndDay(13, 24);
         displayWeekdayType(3);
     }
 
@@ -35,7 +35,7 @@ public class Task8 {
         if (dayOfWeek < 1 || dayOfWeek > 7) {
             System.out.println("Не день недели");
         } else {
-            String weekdayType = (dayOfWeek >= 2 && dayOfWeek <= 6) ? "Будний" : "Выходной";
+            String weekdayType = (dayOfWeek >= 1 && dayOfWeek <= 5) ? "Будний" : "Выходной";
             System.out.println(weekdayType);
         }
     }
@@ -43,19 +43,19 @@ public class Task8 {
 
     public static String getMonthName(int month) {
         return switch (month) {
-            case 1 -> "Январь";
-            case 2 -> "Февраль";
-            case 3 -> "Март";
-            case 4 -> "Апрель";
-            case 5 -> "Май";
-            case 6 -> "Июнь";
-            case 7 -> "Июль";
-            case 8 -> "Август";
-            case 9 -> "Сентябрь";
-            case 10 -> "Октябрь";
-            case 11 -> "Ноябрь";
-            case 12 -> "Декабрь";
-            case 13 -> "Бредябрь";
+            case 1 -> "Января";
+            case 2 -> "Февраля";
+            case 3 -> "Марта";
+            case 4 -> "Апреля";
+            case 5 -> "Мая";
+            case 6 -> "Июня";
+            case 7 -> "Июля";
+            case 8 -> "Августа";
+            case 9 -> "Сентября";
+            case 10 -> "Октября";
+            case 11 -> "Ноября";
+            case 12 -> "Декабря";
+            case 13 -> "Бредября";
             default -> "Неверный месяц";
         };
     }
