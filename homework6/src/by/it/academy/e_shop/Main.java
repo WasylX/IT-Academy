@@ -19,7 +19,7 @@ public class Main {
         user1.getCart().addProduct(product2);
         user2.getCart().addProduct(product3);
         user2.getCart().addProduct(product4);
-        user3.getCart().addProduct(product3);
+        user3.getCart().addProduct(product2);
         user3.getCart().addProduct(product2);
 
         System.out.println("Каталог продуктов:");
@@ -34,8 +34,8 @@ public class Main {
         System.out.println("\nПокупки пользователей:");
         for (User user : new User[]{user1, user2, user3}) {
             System.out.println(user.getUsername() + "'s Cart:");
-            for (Product product : user.getCart().getItems()) {
-                System.out.println("- " + product.getName());
+            for (CartItem cartItem : user.getCart().getItems()) {
+                System.out.println("- " + cartItem.toString());
             }
         }
     }

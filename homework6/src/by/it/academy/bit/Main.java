@@ -2,51 +2,37 @@ package by.it.academy.bit;
 
 public class Main {
     public static void main(String[] args) {
-        // Создаем объект BooleanArray с начальной емкостью 10
-        BooleanArray boolArray = new BooleanArray(10);
+        // Создаем объект BooleanArray с начальной емкостью 1
+        BooleanArray boolArray = new BooleanArray(1);
 
-        // 1. Добавление нового значения в конец массива: add(boolean v)
+        // Добавление новых значений
+        boolArray.add(true);
         boolArray.add(true);
         boolArray.add(false);
+        boolArray.add(false);
         boolArray.add(true);
+        boolArray.add(false);
         boolArray.add(true);
         boolArray.add(false);
 
         // Вывод начального состояния массива
         System.out.println("Начальное состояние массива:");
-        printBinaryBooleanArray(boolArray);
+        boolArray.printBooleanArray();
 
-        // 2. Получение значения по индексу: boolean get(int i)
-        System.out.println("Значение по индексу 2: " + boolArray.get(2));
-        System.out.println("Значение по индексу 5: " + boolArray.get(5));
+        boolArray.set(1, false);
+        boolArray.set(3, true);
+        boolArray.set(5, true);
+        boolArray.set(7, true);
 
-        // 3. Добавление значения по индексу: void add(int i, boolean v)
-        boolArray.add(1, false);
-        boolArray.add(3, false);
+        System.out.println("Измененное состояние массива:");
+        boolArray.printBooleanArray();
 
-        // 4. Изменение значения по индексу: void set(int i, boolean v)
-        boolArray.set(0, false);
-        boolArray.set(4, true);
-
-        // 5. Удаление значения по индексу: boolean remove(int i)
-        boolean removedValue = boolArray.remove(2);
-        System.out.println("Удаленное значение: " + removedValue);
-
-        // 6. Получение длины массива: int size()
-        System.out.println("Длина массива: " + boolArray.size());
+        boolArray.remove(2);
+        boolArray.remove(4);
 
         // Вывод конечного состояния массива
         System.out.println("Конечное состояние массива:");
-        printBinaryBooleanArray(boolArray);
-    }
-
-    // Метод для вывода массива boolean в бинарной форме
-    private static void printBinaryBooleanArray(BooleanArray boolArray) {
-        int size = boolArray.size();
-        for (int i = 0; i < size; i++) {
-            System.out.print(boolArray.get(i) ? "1" : "0");
-        }
-        System.out.println();
+        boolArray.printBooleanArray();
     }
 }
 

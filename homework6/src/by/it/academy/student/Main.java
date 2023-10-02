@@ -41,11 +41,15 @@ public class Main {
             System.out.println(student);
         }
 
-        System.out.println("Списки студентов для каждого факультета и курса:");
-        Student[] allStudents = manager.getStudentsByFacultyAndCourse();
-        for (Student student : allStudents) {
+        facultyToFind = "Факультет#1";
+        int courseToFind = 2;
+
+        Student[] studentsByFacultyAndCourse = manager.getStudentsByFacultyAndCourse(facultyToFind, courseToFind);
+        System.out.println("Список студентов факультета " + facultyToFind + " и курса " + courseToFind + ":");
+        for (Student student : studentsByFacultyAndCourse) {
             System.out.println(student);
         }
+
 
         String birthYearToFind = "2000";
         Student[] studentsBornAfterYear = manager.getStudentsBornAfterYear(birthYearToFind);

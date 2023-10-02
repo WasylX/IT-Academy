@@ -32,9 +32,18 @@ public class StudentManager {
         return Arrays.copyOf(result, count);
     }
 
-    public Student[] getStudentsByFacultyAndCourse() {
-        return Arrays.copyOf(students, size);
+    public Student[] getStudentsByFacultyAndCourse(String faculty, int course) {
+        Student[] result = new Student[size];
+        int count = 0;
+        for (int i = 0; i < size; i++) {
+            if (students[i].getFaculty().equals(faculty) && students[i].getCourse() == course) {
+                result[count] = students[i];
+                count++;
+            }
+        }
+        return Arrays.copyOf(result, count);
     }
+
 
     public Student[] getStudentsBornAfterYear(String year) {
         Student[] result = new Student[size];
