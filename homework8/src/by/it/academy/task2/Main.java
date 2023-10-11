@@ -4,21 +4,30 @@ public class Main {
     public static void main(String[] args) {
         AirlineCompany airlineCompany = new AirlineCompany(10);
 
-        airlineCompany.addAircraft(new Airplane(
+        airlineCompany.addAircraft(
+                new Airplane(
                 "Boeing 747",
                 400,
                 10000,
-                500));
-        airlineCompany.addAircraft(new Helicopter(
+                500
+                )
+        );
+        airlineCompany.addAircraft(
+                new Helicopter(
                 "Eurocopter EC130",
                 6,
                 500,
-                120));
-        airlineCompany.addAircraft(new Quadcopter(
+                120
+                )
+        );
+        airlineCompany.addAircraft(
+                new Quadcopter(
                 "DJI Matrice 600",
                 0,
                 3,
-                6));
+                6
+                )
+        );
 
         int totalPassengerCapacity = airlineCompany.getTotalPassengerCapacity();
         double totalCargoCapacity = airlineCompany.getTotalCargoCapacity();
@@ -31,7 +40,6 @@ public class Main {
         System.out.println("Общая грузоподъемность: " + totalCargoCapacity + " кг");
         System.out.println("--------------");
 
-        airlineCompany.sortByRange();
         System.out.println("Список летных средств после сортировки по дальности полета:");
         System.out.println();
 

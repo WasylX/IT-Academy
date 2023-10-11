@@ -30,20 +30,8 @@ class Farm {
                     + animal.getProductUnit());
             System.out.println("Количество продукции в год: " + animal.getProductPerWeek() * 4 * 12 + " "
                     + animal.getProductUnit());
-            System.out.println();
+            System.out.println("------------------");
         }
-    }
-
-    public static void main(String[] args) {
-        Farm farm = new Farm(5);
-
-        farm.addAnimal(new Chicken());
-        farm.addAnimal(new Duck());
-        farm.addAnimal(new Goose());
-        farm.addAnimal(new Cow());
-        farm.addAnimal(new Sheep());
-
-        farm.printProducts();
     }
 }
 
