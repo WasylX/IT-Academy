@@ -11,13 +11,15 @@ public class Main {
         integerArray.setElement(3, 35);
         integerArray.setElement(4, 25);
 
-        Iterator<Integer> iterator = integerArray.getIterator();
-        while (iterator.hasNext()) {
-            iterator.next();
+        int index = 0;
+        for (Integer element : integerArray) {
+            System.out.println("Индекс " + index + ": " + element);
             System.out.println("-------------");
+            index++;
         }
         System.out.println("IntegerArray: " + "\n" + integerArray);
         System.out.println("------------------------------------------------");
+
         int changedElement1 = integerArray.changeElement(0, 45);
         System.out.println("Заменен элемент с индексом: " + changedElement1);
         System.out.println(integerArray);
@@ -27,4 +29,10 @@ public class Main {
         System.out.println("Элемент с индексом 2: " + elementAtIndex2);
     }
 }
+
+
+
+
+
+
 

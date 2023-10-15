@@ -39,7 +39,20 @@ public class GenericArray<T> implements Iterable<T> {
         return index;
     }
 
-    private class ArrayIterator implements Iterator<T> {
+    @Override
+    public String toString() {
+        return "GenericArray{" +
+                "array=" + Arrays.toString(array) +
+                ", size=" + size +
+                '}';
+    }
+
+    public Iterator<T> getIterator() {
+        return new ArrayIterator();
+    }
+
+
+    class ArrayIterator implements Iterator<T> {
         private int currentIndex = 0;
 
         @Override
@@ -51,25 +64,12 @@ public class GenericArray<T> implements Iterable<T> {
         public T next() {
             if (hasNext()) {
                 T element = array[currentIndex];
-                System.out.println("Индекс " + currentIndex + ": " + element);
                 currentIndex++;
                 return element;
             } else {
                 return null;
             }
         }
-    }
-
-    @Override
-    public String toString() {
-        return "GenericArray{" +
-                "array=" + Arrays.toString(array) +
-                ", size=" + size +
-                '}';
-    }
-
-    public Iterator<T> getIterator() {
-        return new ArrayIterator();
     }
 }
 

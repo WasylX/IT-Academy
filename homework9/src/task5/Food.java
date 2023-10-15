@@ -15,7 +15,6 @@ public abstract class Food {
         this.name = name;
     }
 
-    // Абстрактный метод для получения типа еды
-     abstract FoodType getFoodType();
+    abstract FoodType getFoodType();
 }
 

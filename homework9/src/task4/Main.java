@@ -8,7 +8,7 @@ public class Main {
                 {7, 8, 9}
         };
 
-        TwoDimensionalArrayIterator<Integer> iterator = new TwoDimensionalArrayIterator<>(array);
+        MatrixIterator<Integer> iterator = new MatrixIterator<>(array);
 
         while (iterator.hasNext()) {
             Integer element = iterator.next();

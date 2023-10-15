@@ -2,12 +2,12 @@ package task4;
 
 import java.util.Iterator;
 
-public class TwoDimensionalArrayIterator<T> implements Iterator<T> {
+public class MatrixIterator<T> implements Iterator<T> {
     private final T[][] array;
     private int rowIndex;
     private int colIndex;
 
-    public TwoDimensionalArrayIterator(T[][] array) {
+    public MatrixIterator(T[][] array) {
         this.array = array;
         rowIndex = 0;
         colIndex = 0;

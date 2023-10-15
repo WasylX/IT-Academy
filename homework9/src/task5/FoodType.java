@@ -6,6 +6,10 @@ enum FoodType {
     FRUIT,
     VEGETABLE,
     MILK,
-    UNKNOWN
+    UNKNOWN;
+
+    public boolean isVegetarian() {
+        return this == VEGETABLE || this == FRUIT || this == MILK;
+    }
 }
 
