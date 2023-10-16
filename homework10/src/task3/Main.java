@@ -34,14 +34,13 @@ public class Main {
             System.out.println("-------------------------------");
             System.out.println(student.name);
 
-            for (Map.Entry<Subject, Map<Integer, Integer>> entry : student.getGradeStatistics().entrySet()) {
-                Subject subject = entry.getKey();
-                Map<Integer, Integer> gradeCount = entry.getValue();
+            for (Subject subject : student.getGradeStatistics().keySet()) {
+                Map<Integer, Integer> gradeCount = student.getGradeStatistics().get(subject);
 
                 System.out.print(subject.name + " {");
 
-                for (Map.Entry<Integer, Integer> gradeEntry : gradeCount.entrySet()) {
-                    System.out.print(gradeEntry.getKey() + " - " + gradeEntry.getValue() + ", ");
+                for (Integer grade : gradeCount.keySet()) {
+                    System.out.print(grade + " - " + gradeCount.get(grade) + ", ");
                 }
                 System.out.println("}");
             }

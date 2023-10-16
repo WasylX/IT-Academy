@@ -49,9 +49,9 @@ class Student {
 
     public Map<Subject, Map<Integer, Integer>> getGradeStatistics() {
         Map<Subject, Map<Integer, Integer>> statistics = new HashMap<>();
-        for (Map.Entry<Subject, List<Mark>> entry : gradesBySubjects.entrySet()) {
-            Subject subject = entry.getKey();
-            List<Mark> marks = entry.getValue();
+
+        for (Subject subject : gradesBySubjects.keySet()) {
+            List<Mark> marks = gradesBySubjects.get(subject);
             Map<Integer, Integer> gradeCount = new HashMap<>();
 
             for (Mark mark : marks) {
@@ -60,6 +60,7 @@ class Student {
 
             statistics.put(subject, gradeCount);
         }
+
         return statistics;
     }
 }
