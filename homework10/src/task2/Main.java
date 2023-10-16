@@ -9,8 +9,8 @@ public class Main {
         String input = "baaccc";
         Map<Character, Integer> charCountMap = getCharsCount(input);
 
-        for (Map.Entry<Character, Integer> entry : charCountMap.entrySet()) {
-            System.out.println("'" + entry.getKey() + "' - " + entry.getValue());
+        for (Character character : charCountMap.keySet()) {
+            System.out.println("'" + character + "' - " + charCountMap.get(character));
         }
     }
 }
