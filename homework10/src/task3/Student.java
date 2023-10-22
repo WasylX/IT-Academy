@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 class Student {
-    String name;
-    Map<Subject, List<Mark>> gradesBySubjects;
+    public String name;
+    public Map<Subject, List<Mark>> gradesBySubjects;
 
     public Student(String name) {
         this.name = name;

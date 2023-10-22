@@ -1,17 +1,19 @@
 package task4;
 
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
-import java.util.ListIterator;
+public class SortedList<E> implements List<E> {
+    private final List<E> sortedList;
+    private Comparator<? super E> comparator;
 
-public abstract class SortedList<E extends Comparable<E>> implements List<E> {
-    private List<E> sortedList;
-
-    protected SortedList() {
+    public SortedList() {
         sortedList = new ArrayList<>();
+        this.comparator = null;
+    }
+
+    public SortedList(Comparator<? super E> comparator) {
+        sortedList = new ArrayList<>();
+        this.comparator = comparator;
     }
 
     @Override
@@ -30,10 +32,21 @@ public abstract class SortedList<E extends Comparable<E>> implements List<E> {
     }
 
     @Override
+    public Iterator<E> iterator() {
+        return sortedList.iterator();
+    }
+
+    @Override
     public boolean add(E e) {
         int index = 0;
-        while (index < sortedList.size() && e.compareTo(sortedList.get(index)) > 0) {
-            index++;
+        if (comparator != null) {
+            while (index < sortedList.size() && comparator.compare(e, sortedList.get(index)) > 0) {
+                index++;
+            }
+        } else {
+            while (index < sortedList.size() && ((Comparable<? super E>) e).compareTo(sortedList.get(index)) > 0) {
+                index++;
+            }
         }
         sortedList.add(index, e);
         return true;
@@ -46,20 +59,21 @@ public abstract class SortedList<E extends Comparable<E>> implements List<E> {
 
     @Override
     public boolean containsAll(Collection<?> c) {
-        return new HashSet<>(sortedList).containsAll(c);
+        return sortedList.containsAll(c);
     }
 
     @Override
     public boolean addAll(Collection<? extends E> c) {
-        for (E e : c) {
-            add(e);
-        }
-        return true;
+        boolean added = sortedList.addAll(c);
+        sortedList.sort(comparator);
+        return added;
     }
 
     @Override
     public boolean addAll(int index, Collection<? extends E> c) {
-        return sortedList.addAll(index, c);
+        boolean added = sortedList.addAll(index, c);
+        sortedList.sort(comparator);
+        return added;
     }
 
     @Override
@@ -87,6 +101,15 @@ public abstract class SortedList<E extends Comparable<E>> implements List<E> {
         E removed = sortedList.remove(index);
         add(element);
         return removed;
+    }
+
+    public void setComparator(Comparator<? super E> comparator) {
+        this.comparator = comparator;
+        sortedList.sort(comparator);
+    }
+
+    public Comparator<? super E> getComparator() {
+        return comparator;
     }
 
     @Override
@@ -132,6 +155,13 @@ public abstract class SortedList<E extends Comparable<E>> implements List<E> {
     @Override
     public <T> T[] toArray(T[] a) {
         return sortedList.toArray(a);
+    }
+
+    @Override
+    public String toString() {
+        return "SortedList{" +
+                "sortedList=" + sortedList +
+                '}';
     }
 }
 
